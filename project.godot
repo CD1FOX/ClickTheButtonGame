@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="Click the Button Game"
+run/main_scene="uid://bkno4rn1e78d2"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
