@@ -8,17 +8,24 @@ func RandomLocations():
 	var randomNumberY = randi_range(59, 555)
 	$Button.position.x = randomNumberX
 	$Button.position.y = randomNumberY
-	$Timer.start()
+	$RepositionTimer.start()
 
 func _ready() -> void:
 	RandomLocations()
+	$TimeLeftTimer.start()
 
 func _process(_delta: float) -> void:
-	$Label.text = "Score: " + str(clickCount)
-	print(int($Timer.time_left))
+	#Increase Score
+	$ScoreLabel.text = "Score: " + str(clickCount)
+	
+	#TimerLeft
+	$TimeLeftLabel.text = "TIME: " + str(int($TimeLeftTimer.time_left))
 
 func _on_button_pressed() -> void:
 	clickCount += 1
 
 func _on_timer_timeout() -> void:
 	RandomLocations()
+
+func _on_time_left_timer_timeout() -> void:
+	get_tree().quit()

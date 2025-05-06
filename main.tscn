@@ -5,7 +5,7 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ig7tw")
 
-[node name="Label" type="Label" parent="."]
+[node name="ScoreLabel" type="Label" parent="."]
 offset_left = 16.0
 offset_top = -4.0
 offset_right = 201.0
@@ -16,7 +16,18 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="TimeLeftLabel" type="Label" parent="."]
+offset_left = 316.0
+offset_top = -4.0
+offset_right = 729.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 50
+text = "Time: "
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="RepositionTimer" type="Timer" parent="."]
 wait_time = 2.5
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -34,5 +45,9 @@ offset_bottom = 632.0
 theme_override_font_sizes/font_size = 50
 text = "Click me"
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="TimeLeftTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="RepositionTimer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="TimeLeftTimer" to="." method="_on_time_left_timer_timeout"]
