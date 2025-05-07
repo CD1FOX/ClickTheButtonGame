@@ -42,11 +42,10 @@ offset_left = 928.0
 offset_top = 555.0
 offset_right = 1139.0
 offset_bottom = 632.0
-theme_override_font_sizes/font_size = 50
 text = "Click me"
 
 [node name="TimeLeftTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 60.0
 
 [connection signal="timeout" from="RepositionTimer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
