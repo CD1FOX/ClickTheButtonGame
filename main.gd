@@ -23,6 +23,7 @@ func RandomLocations():
 	$RepositionTimer.start()
 
 func _ready() -> void:
+	$TimeLeftTimer.start(Global.time)
 	RandomLocations()
 	$TimeLeftTimer.start()
 

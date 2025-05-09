@@ -26,4 +26,11 @@ size_flags_vertical = 1
 theme_override_font_sizes/font_size = 50
 text = "High Score: "
 
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 379.0
+offset_top = 443.0
+offset_right = 795.0
+offset_bottom = 578.0
+theme_override_font_sizes/font_size = 50
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

@@ -1,5 +1,7 @@
 extends Node2D
 
+var time = 10;
+
 var high_score = 0
 var savePath = "user://high_score.save"
 
