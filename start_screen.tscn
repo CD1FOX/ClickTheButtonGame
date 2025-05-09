@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgxp4hlwyu8nq"]
+
+[ext_resource type="Script" uid="uid://1pbi3p8hesir" path="res://start_screen.gd" id="1_ncxyx"]
+
+[node name="StartScreen" type="Node2D"]
+script = ExtResource("1_ncxyx")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 406.0
+offset_top = 140.0
+offset_right = 804.0
+offset_bottom = 292.0
+text = "PLAY"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
