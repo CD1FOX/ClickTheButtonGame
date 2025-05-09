@@ -47,4 +47,7 @@ func _on_timer_timeout() -> void:
 	RandomLocations()
 
 func _on_time_left_timer_timeout() -> void:
-	get_tree().quit()
+	if clickCount > Global.high_score:
+		Global.high_score = clickCount
+		Global.save_high_score()
+	get_tree().change_scene_to_file("res://end_screen.tscn")

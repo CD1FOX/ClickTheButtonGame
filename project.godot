@@ -14,3 +14,7 @@ config/name="Click the Button Game"
 run/main_scene="uid://bgxp4hlwyu8nq"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://global.gd"

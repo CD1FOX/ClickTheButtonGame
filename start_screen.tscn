@@ -12,4 +12,18 @@ offset_right = 804.0
 offset_bottom = 292.0
 text = "PLAY"
 
+[node name="HighScoreLabel" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 411.0
+offset_top = 364.0
+offset_right = 695.0
+offset_bottom = 433.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 50
+text = "High Score: "
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
