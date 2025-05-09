@@ -33,12 +33,13 @@ func _process(_delta: float) -> void:
 	#TimerLeft
 	$TimeLeftLabel.text = "TIME: " + str(int($TimeLeftTimer.time_left))
 	
-	if clickCount % 10 == 0 and clickCount != 0:
+	if clickCount % 30 == 0 and clickCount != 0:
 		ShrinkSize()
 	else:
 		shrinkAlready = false
 		
 func _on_button_pressed() -> void:
+	$Button.modulate = Color(0, 128, 0)
 	var sound = ClickSoundScene.instantiate()
 	add_child(sound)
 	clickCount += 1
@@ -51,3 +52,11 @@ func _on_time_left_timer_timeout() -> void:
 		Global.high_score = clickCount
 		Global.save_high_score()
 	get_tree().change_scene_to_file("res://end_screen.tscn")
+
+
+func _on_button_mouse_entered() -> void:
+	$Button.modulate = Color(1, 0, 0)
+
+
+func _on_button_mouse_exited() -> void:
+	$Button.modulate = Color(1, 1, 1)
