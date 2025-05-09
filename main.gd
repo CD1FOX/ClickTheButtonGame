@@ -5,6 +5,8 @@ var clickCount = 0
 
 var shrinkAlready = false
 
+var ClickSoundScene = preload("res://click_sound.tscn")
+
 func ShrinkSize():
 	if not shrinkAlready:
 		$Button.size.x -= 20
@@ -37,6 +39,8 @@ func _process(_delta: float) -> void:
 		shrinkAlready = false
 		
 func _on_button_pressed() -> void:
+	var sound = ClickSoundScene.instantiate()
+	add_child(sound)
 	clickCount += 1
 
 func _on_timer_timeout() -> void:
